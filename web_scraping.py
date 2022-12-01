@@ -17,6 +17,9 @@ def get_news():
                 news_dict[noticia.h2.text]=noticia.get('href')
             if tgt_class2 in noticia.h2.get('class'):
                 news_dict[noticia.h2.text]=noticia.get('href')
+    with open('noticias.txt','w') as f:
+        for noticia in noticias:  
+            f.write('{}\n'.format(noticia))
     return news_dict
 
 news = get_news()
