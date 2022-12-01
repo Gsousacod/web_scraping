@@ -1,5 +1,4 @@
 import requests
-import pandas as pd
 from bs4 import BeautifulSoup
 
 def get_news():
@@ -21,5 +20,3 @@ def get_news():
     return news_dict
 
 news = get_news()
-df = pd.DataFrame(news)
-df.to_csv('noticias.csv',  sep=';')
